@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA88905B1E31AA7800FF4B5C /* cards.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA88905A1E31AA7800FF4B5C /* cards.cpp */; };
 		BADFCD161E31965400D2F47C /* HW1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BADFCD151E31965400D2F47C /* HW1.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA88905A1E31AA7800FF4B5C /* cards.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cards.cpp; path = HW1/cards.cpp; sourceTree = "<group>"; };
 		BADFCD0B1E3195FC00D2F47C /* HW1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HW1; sourceTree = BUILT_PRODUCTS_DIR; };
 		BADFCD151E31965400D2F47C /* HW1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HW1.cpp; path = HW1/HW1.cpp; sourceTree = "<group>"; };
 		BADFCD1A1E31A7C600D2F47C /* cards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cards.h; path = HW1/cards.h; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 				BADFCD0C1E3195FC00D2F47C /* Products */,
 				BADFCD151E31965400D2F47C /* HW1.cpp */,
 				BADFCD1A1E31A7C600D2F47C /* cards.h */,
+				BA88905A1E31AA7800FF4B5C /* cards.cpp */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADFCD161E31965400D2F47C /* HW1.cpp in Sources */,
+				BA88905B1E31AA7800FF4B5C /* cards.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

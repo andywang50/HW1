@@ -241,7 +241,7 @@ void Player::AddCard(Card c){
     playercards.AddCard(c);
 }
 void Player::report(string s){
-    cout<<s<<" has card(s): ";
+    cout<<s<<" has card(s):\n";
     playercards.report();
     cout<<"Sum of "<<playercards.SumHand()<<"\n";
 }

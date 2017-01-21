@@ -210,7 +210,7 @@ double Hand::SumHand(){
             sum=sum+val.get_rank();
         }
         else{
-            sum=sum+(1/2);
+            sum=sum+(0.5);
         }
     }
     return sum;

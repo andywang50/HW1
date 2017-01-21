@@ -54,7 +54,7 @@ int main() {
                 }while(ans!="y"&ans!="n");
             }while(ans=="y");
             
-            if (h.get_money()>7.5&p.get_money()<=7.5){
+            if (h.SumPlayer()>7.5&p.SumPlayer()<=7.5){
                 cout<<"Player wins"<<"\n";
                 p.clearmoney(bet);
                 h.clearmoney(-1*bet);
@@ -62,7 +62,7 @@ int main() {
                 cout<<"Host has money: "<<h.get_money()<<"\n";
             }
             
-            if (h.get_money()<=7.5&p.get_money()>7.5){
+            if (h.SumPlayer()<=7.5&p.SumPlayer()>7.5){
                 cout<<"Host wins"<<"\n";
                 p.clearmoney(-1*bet);
                 h.clearmoney(bet);
@@ -70,7 +70,7 @@ int main() {
                 cout<<"Host has money: "<<h.get_money()<<"\n";
             }
             
-            if (h.get_money()>7.5&p.get_money()>7.5){
+            if (h.SumPlayer()>7.5&p.SumPlayer()>7.5){
                 cout<<"Host wins (Host advantage)"<<"\n";
                 p.clearmoney(-1*bet);
                 h.clearmoney(bet);
@@ -78,7 +78,7 @@ int main() {
                 cout<<"Host has money: "<<h.get_money()<<"\n";
             }
             
-            if (h.get_money()<=7.5&p.get_money()<=7.5){
+            if (h.SumPlayer()<=7.5&p.SumPlayer()<=7.5){
                 
                 if(h.SumPlayer()>p.SumPlayer()){
                     cout<<"Host wins"<<"\n";
@@ -118,6 +118,9 @@ int main() {
         }while(ans!="y"&ans!="n");
         if (ans=="y"){
             wtp=1;
+        }
+        else{
+            wtp=0;
         }
     }
     

@@ -216,6 +216,12 @@ double Hand::SumHand(){
     return sum;
 }
 
+void Hand::report(){
+    for(auto& val:hand){
+        cout<<val.get_spanish_rank()<<" of "<<val.get_spanish_suit()<<"\n";
+    }
+}
+
 /* *************************************************
  Player class
  ************************************************* */
@@ -231,7 +237,14 @@ double Player::SumPlayer(){
 int Player::get_money(){
     return money;
 }
-
+void Player::AddCard(Card c){
+    playercards.AddCard(c);
+}
+void Player::report(string s){
+    cout<<s<<" has card(s): ";
+    playercards.report();
+    cout<<"Sum of "<<playercards.SumHand()<<"\n";
+}
 
 
 

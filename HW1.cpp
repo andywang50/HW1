@@ -12,10 +12,13 @@
 #include <cstdlib>
 #include "cards.h"
 using namespace std;
-using namespace std;
 int main() {
     bool wtp=1;
     string ans;
+    string player="Player";
+    string host="Host";
+    Card pc=Card();
+    Card hc=Card();
     int bet;
 
     while(wtp==1){
@@ -26,6 +29,21 @@ int main() {
                 cout << "Please enter a valid integer as your bet.\n";
                 cin  >> bet;
             }while(bet<=0|bet>p.get_money());
+        
+            do{
+                pc=Card();
+                p.AddCard(pc);
+                if (h.SumPlayer()<=5.5){
+                    hc=Card();
+                    h.AddCard(hc);
+                }
+                p.report(player);
+                h.report(host);
+                do{
+                    cout<<"Do you want another card? (y/n)\n";
+                    cin>>ans;
+                }while(ans!="y"&ans!="n");
+            }while(ans=="y");
             
         }
         if (p.get_money()<=0){

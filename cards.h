@@ -64,6 +64,7 @@ public:
     Hand();
     void AddCard(Card c);
     double SumHand();
+    void report();
     
 private:
     vector<Card> hand;
@@ -77,6 +78,8 @@ public:
     Player(int m);
     double SumPlayer();
     int get_money();
+    void AddCard(Card c);
+    void report(string s);
     // You decide what functions you'll need...
     
 private:

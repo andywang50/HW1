@@ -47,12 +47,12 @@ int main() {
                 if (p.SumPlayer()>7.5|h.SumPlayer()>7.5){
                     ans="n";
                 }
-                
-                while (ans!="n"|ans!="y"){
-                    cout<<"Do you want another card? (y/n)\n";
-                    cin>>ans;
+                else{
+                    do{
+                        cout<<"Do you want another card? (y/n)\n";
+                        cin>>ans;
+                    }while (ans!="n"&ans!="y");
                 }
-                
             }while(ans=="y");
             
             if (h.SumPlayer()>7.5&p.SumPlayer()<=7.5){
@@ -106,8 +106,6 @@ int main() {
             
         }
         
-        ans="";
-        
         if (p.get_money()<=0){
             wtp=0;
         }
@@ -125,6 +123,6 @@ int main() {
             wtp=0;
         }
     }
-    
+    cout<<"Bye Bye!\n";
     return 0;
 }

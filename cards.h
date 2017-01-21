@@ -79,6 +79,7 @@ public:
     double SumPlayer();
     int get_money();
     void AddCard(Card c);
+    void clearmoney(int a);
     void report(string s);
     // You decide what functions you'll need...
     

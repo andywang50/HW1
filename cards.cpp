@@ -245,7 +245,9 @@ void Player::report(string s){
     playercards.report();
     cout<<"Sum of "<<playercards.SumHand()<<"\n";
 }
-
+void Player::clearmoney(int a){
+    money+=a;
+}
 
 
 

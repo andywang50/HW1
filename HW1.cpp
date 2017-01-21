@@ -14,16 +14,20 @@
 using namespace std;
 int main() {
     bool wtp=1;
-    string ans;
+    string ans="";
     string player="Player";
     string host="Host";
     Card pc=Card();
     Card hc=Card();
-    int bet;
+    Player p=Player(100);
+    Player h=Player(900);
+    int bet=0;
 
     while(wtp==1){
-        Player p=Player(100);
-        Player h=Player(900);
+        p=Player(100);
+        h=Player(900);
+        
+        
         while (p.get_money()>0&h.get_money()>0){
             do{
                 cout << "Please enter a valid integer as your bet.\n";
@@ -39,19 +43,73 @@ int main() {
                 }
                 p.report(player);
                 h.report(host);
+                
+                if (p.SumPlayer()>7.5|h.SumPlayer()>7.5){
+                    ans="n";
+                }
+                
                 do{
                     cout<<"Do you want another card? (y/n)\n";
                     cin>>ans;
                 }while(ans!="y"&ans!="n");
             }while(ans=="y");
             
+            if (h.get_money()>7.5&p.get_money()<=7.5){
+                cout<<"Player wins"<<"\n";
+                p.clearmoney(bet);
+                h.clearmoney(-1*bet);
+                cout<<"Player has money: "<<p.get_money()<<"\n";
+                cout<<"Host has money: "<<h.get_money()<<"\n";
+            }
+            
+            if (h.get_money()<=7.5&p.get_money()>7.5){
+                cout<<"Host wins"<<"\n";
+                p.clearmoney(-1*bet);
+                h.clearmoney(bet);
+                cout<<"Player has money: "<<p.get_money()<<"\n";
+                cout<<"Host has money: "<<h.get_money()<<"\n";
+            }
+            
+            if (h.get_money()>7.5&p.get_money()>7.5){
+                cout<<"Host wins (Host advantage)"<<"\n";
+                p.clearmoney(-1*bet);
+                h.clearmoney(bet);
+                cout<<"Player has money: "<<p.get_money()<<"\n";
+                cout<<"Host has money: "<<h.get_money()<<"\n";
+            }
+            
+            if (h.get_money()<=7.5&p.get_money()<=7.5){
+                
+                if(h.SumPlayer()>p.SumPlayer()){
+                    cout<<"Host wins"<<"\n";
+                    p.clearmoney(-1*bet);
+                    h.clearmoney(bet);
+                    cout<<"Player has money: "<<p.get_money()<<"\n";
+                    cout<<"Host has money: "<<h.get_money()<<"\n";
+                }
+                
+                if(h.SumPlayer()<p.SumPlayer()){
+                    cout<<"Player wins"<<"\n";
+                    p.clearmoney(bet);
+                    h.clearmoney(-1*bet);
+                    cout<<"Player has money: "<<p.get_money()<<"\n";
+                    cout<<"Host has money: "<<h.get_money()<<"\n";
+                }
+                
+                if(h.SumPlayer()==p.SumPlayer()){
+                    cout<<"Tie"<<"\n";
+                    cout<<"Player has money: "<<p.get_money()<<"\n";
+                    cout<<"Host has money: "<<h.get_money()<<"\n";
+                }
+            }
+            
         }
+        
+        
         if (p.get_money()<=0){
-            cout<<"Player loses.\n";
             wtp=0;
         }
         if (h.get_money()<=0){
-            cout<<"Host loses";
             wtp=0;
         }
         do{

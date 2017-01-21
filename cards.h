@@ -62,11 +62,11 @@ class Hand {
 public:
     // A vector of Cards
     Hand();
-    
-    // You decide what functions you'll need...
+    void AddCard(Card c);
+    double SumHand();
     
 private:
-    // You decide what fields you'll need...
+    vector<Card> hand;
 };
 
 
@@ -75,12 +75,14 @@ public:
     // Constructor.
     //    Assigns initial amount of money
     Player(int m);
-    
+    double SumPlayer();
+    int get_money();
     // You decide what functions you'll need...
     
 private:
     int money;
     // You decide what extra fields (if any) you'll need...
+    Hand playercards;
 };
 
 #endif

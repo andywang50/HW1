@@ -116,13 +116,64 @@ string Card::get_spanish_rank() const {
 // Accessor: returns a string with the suit of the card in English
 // This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const {
-    return "";
+    string suitName;
+    switch (suit) {
+        case OROS:
+            suitName = "golds";
+            break;
+        case COPAS:
+            suitName = "cups";
+            break;
+        case ESPADAS:
+            suitName = "swords";
+            break;
+        case BASTOS:
+            suitName = "clubs";
+            break;
+        default: break;
+    }
+    return suitName;
 }
 
 // Accessor: returns a string with the rank of the card in English
 // This is just a stub! Modify it to your liking.
 string Card::get_english_rank() const {
-    return "";
+    string rankName;
+    switch (rank) {
+        case AS:
+            rankName = "Ace";
+            break;
+        case DOS:
+            rankName = "Two";
+            break;
+        case TRES:
+            rankName = "Three";
+            break;
+        case CUATRO:
+            rankName = "Four";
+            break;
+        case CINCO:
+            rankName = "Five";
+            break;
+        case SEIS:
+            rankName = "Six";
+            break;
+        case SIETE:
+            rankName = "Seven";
+            break;
+        case SOTA:
+            rankName = "Jack";
+            break;
+        case CABALLO:
+            rankName = "Queen";
+            break;
+        case REY:
+            rankName = "King";
+            break;
+        default: break;
+    }
+    return rankName;
+
 }
 
 
@@ -139,16 +190,69 @@ bool Card::operator < (Card card2) const {
     return rank < card2.rank;
 }
 
-
-
 /* *************************************************
  Hand class
  ************************************************* */
 // Implemente the member functions of the Hand class here.
 
+Hand::Hand(){
+    hand={};
+}
 
+void Hand::AddCard(Card c){
+    hand.push_back(c);
+}
+
+double Hand::SumHand(){
+    double sum=0;
+    for (auto& val:hand){
+        if (val.get_rank()<10){
+            sum=sum+val.get_rank();
+        }
+        else{
+            sum=sum+(1/2);
+        }
+    }
+    return sum;
+}
 
 /* *************************************************
  Player class
  ************************************************* */
 // Implemente the member functions of the Player class here.
+
+Player::Player(int m){
+    money=m;
+    playercards=Hand();
+}
+double Player::SumPlayer(){
+    return playercards.SumHand();
+}
+int Player::get_money(){
+    return money;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

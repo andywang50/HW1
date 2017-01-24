@@ -3,6 +3,7 @@
 //  Winter 2017
 //  PIC 10C HW1
 //  Template from CCLE
+// waiting to be corrected
 
 #include "cards.h"
 #include <cstdlib>
